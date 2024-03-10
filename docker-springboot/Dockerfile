@@ -1,3 +1,4 @@
-FROM openjdk:17-jdk-alpine
-COPY target/docker-springboot-0.0.1-SNAPSHOT.jar docker-springboot-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/docker-springboot-0.0.1-SNAPSHOT.jar"]
+FROM openjdk:8
+EXPOSE 8080
+ADD target/spring-boot-docker.jar spring-boot-docker.jar 
+ENTRYPOINT ["java","-jar","/spring-boot-docker.jar"]
